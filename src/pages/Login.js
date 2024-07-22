@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 function Login() {
 
     const [values, setValues] = useState({
-        email: '',
+        username: '',
         password: ''
     })
   
