@@ -20,7 +20,7 @@ function LaporanBarangKeluarOwner() {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:8081/laporanbarangkeluar');
+            const response = await axios.get('https://api-sistem-inventaris.vercel.app/laporanbarangkeluar');
             setData(response.data);
             filterData(response.data);
         } catch (error) {
@@ -63,7 +63,7 @@ function LaporanBarangKeluarOwner() {
         }
 
         try {
-            await axios.delete(`http://localhost:8081/deletelaporankeluar/${id}`);
+            await axios.delete(`https://api-sistem-inventaris.vercel.app/deletelaporankeluar/${id}`);
             Swal.fire({
                 icon: "success",
                 title: "SUCCESS",

@@ -16,7 +16,7 @@ function CetakBarangMasuk() {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:8081/cetakbarangmasuk/' + id)
+        axios.get('https://api-sistem-inventaris.vercel.app/cetakbarangmasuk/' + id)
             .then(res => {
                 console.log(res)
                 setBarangMasuk(res.data[0]);

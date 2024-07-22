@@ -31,7 +31,7 @@ function CreateCatalog() {
             formData.append('deskripsi', values.deskripsi);
 
             // Tambahkan katalog dengan mengirimkan data dalam bentuk FormData
-            const res = await axios.post('http://localhost:8081/tambahkatalog', formData, {
+            const res = await axios.post('https://api-sistem-inventaris.vercel.app/tambahkatalog', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data' // Tipe konten harus ditentukan sebagai multipart/form-data
                 }

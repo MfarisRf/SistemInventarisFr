@@ -18,7 +18,7 @@ function EditBarang() {
     })
 
     useEffect(()=> {
-        axios.get('http://localhost:8081/editbarang/'+id)
+        axios.get('https://api-sistem-inventaris.vercel.app/editbarang/'+id)
         .then(res => {
             console.log(res)
             setValues({
@@ -34,7 +34,7 @@ function EditBarang() {
 
     const handleUpdate = (event) => {
         event.preventDefault();
-        axios.put('http://localhost:8081/updatebarang/'+id, values)
+        axios.put('https://api-sistem-inventaris.vercel.app/updatebarang/'+id, values)
         .then(res => {
             Swal.fire({
 				icon:"success",

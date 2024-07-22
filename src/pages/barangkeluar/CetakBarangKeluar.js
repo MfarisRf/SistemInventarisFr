@@ -17,7 +17,7 @@ function CetakBarangKeluar() {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:8081/cetakbarangkeluar/' + id)
+        axios.get('https://api-sistem-inventaris.vercel.app/cetakbarangkeluar/' + id)
             .then(res => {
                 console.log(res)
                 setBarangKeluar(res.data[0]);

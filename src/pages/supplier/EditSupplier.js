@@ -18,7 +18,7 @@ function EditSupplier() {
     })
 
     useEffect(()=> {
-        axios.get('http://localhost:8081/editsupplier/'+id)
+        axios.get('https://api-sistem-inventaris.vercel.app/editsupplier/'+id)
         .then(res => {
             console.log(res)
             setValues({
@@ -34,7 +34,7 @@ function EditSupplier() {
 
     const handleUpdate = (event) => {
         event.preventDefault();
-        axios.put('http://localhost:8081/updatesupplier/'+id, values)
+        axios.put('https://api-sistem-inventaris.vercel.app/updatesupplier/'+id, values)
         .then(res => {
             Swal.fire({
 				icon:"success",

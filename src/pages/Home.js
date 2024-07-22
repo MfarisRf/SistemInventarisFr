@@ -37,10 +37,10 @@ function Home() {
 
         const fetchData = async () => {
             try {
-                const suppliersResponse = await axios.get('http://localhost:8081/suppliers/totalsupplier');
-                const customersResponse = await axios.get('http://localhost:8081/customers/totalcustomer');
-                const katalogResponse = await axios.get('http://localhost:8081/totalKatalog');
-                const barangResponse = await axios.get('http://localhost:8081/totalBarang');
+                const suppliersResponse = await axios.get('https://api-sistem-inventaris.vercel.app/suppliers/totalsupplier');
+                const customersResponse = await axios.get('https://api-sistem-inventaris.vercel.app/customers/totalcustomer');
+                const katalogResponse = await axios.get('https://api-sistem-inventaris.vercel.app/totalKatalog');
+                const barangResponse = await axios.get('https://api-sistem-inventaris.vercel.app/totalBarang');
 
                 console.log('Suppliers response:', suppliersResponse.data);
                 console.log('Customers response:', customersResponse.data);
@@ -81,7 +81,7 @@ function Home() {
                 }
 
                 // Fetch data barang masuk per bulan
-                const totalBarangMasukResponse = await axios.get('http://localhost:8081/totalbarangmasukperbulan');
+                const totalBarangMasukResponse = await axios.get('https://api-sistem-inventaris.vercel.app/totalbarangmasukperbulan');
                 const barangMasukData = totalBarangMasukResponse.data;
 
                 const months = [
@@ -106,7 +106,7 @@ function Home() {
                 });
 
                 // Fetch data barang keluar per bulan
-                const totalBarangKeluarResponse = await axios.get('http://localhost:8081/totalbarangkeluarperbulan');
+                const totalBarangKeluarResponse = await axios.get('https://api-sistem-inventaris.vercel.app/totalbarangkeluarperbulan');
                 const barangKeluarData = totalBarangKeluarResponse.data;
 
                 const labelsBarangKeluar = barangKeluarData.map(item => `${months[item.bulan - 1]} ${item.tahun}`);

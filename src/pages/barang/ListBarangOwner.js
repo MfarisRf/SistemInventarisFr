@@ -21,7 +21,7 @@ function ListBarangOwner() {
     },[])
 
     const fetchData = async () => {
-        await axios.get('http://localhost:8081/barang')
+        await axios.get('https://api-sistem-inventaris.vercel.app/barang')
 		.then(res => setData(res.data))
 		.catch(err => console.log(err));
     }
@@ -43,7 +43,7 @@ function ListBarangOwner() {
             return;
           }
 
-          axios.delete('http://localhost:8081/deletebarang/'+id)
+          axios.delete('https://api-sistem-inventaris.vercel.app/deletebarang/'+id)
 			.then(res => {
 				Swal.fire({
 					icon:"success",

@@ -17,7 +17,7 @@ function CreateBarang() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8081/tambahbarang', values)
+        axios.post('https://api-sistem-inventaris.vercel.app/tambahbarang', values)
         .then(res => {
             Swal.fire({
 				icon:"success",

@@ -19,7 +19,7 @@ function EditCatalog() {
     const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:8081/editkatalog/${id}`)
+        axios.get(`https://api-sistem-inventaris.vercel.app/editkatalog/${id}`)
             .then(res => {
                 console.log(res);
                 setValues({
@@ -41,7 +41,7 @@ function EditCatalog() {
         formData.append('deskripsi', values.deskripsi);
 
         try {
-            await axios.put(`http://localhost:8081/updateKatalog/${id}`, formData, {
+            await axios.put(`https://api-sistem-inventaris.vercel.app/updateKatalog/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -108,7 +108,7 @@ function EditCatalog() {
                                             <div className="form-group">
                                                 <label>Gambar Saat Ini</label><br />
                                                 {existingImage && (
-                                                    <img src={`http://localhost:8081/uploads/${existingImage}`} alt="Existing" style={{ width: '100px', height: 'auto' }} />
+                                                    <img src={`https://api-sistem-inventaris.vercel.app/uploads/${existingImage}`} alt="Existing" style={{ width: '100px', height: 'auto' }} />
                                                 )}
                                             </div>
                                             <div className="form-group">

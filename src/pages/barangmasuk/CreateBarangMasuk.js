@@ -22,7 +22,7 @@ function CreateBarangMasuk() {
 
     const fetchBarang = async () => {
         try {
-            const response = await axios.get('http://localhost:8081/getbarang');
+            const response = await axios.get('https://api-sistem-inventaris.vercel.app/getbarang');
             setBarangList(response.data.map(barang => ({
                 label: barang.nama_barang,
                 value: barang.id
@@ -34,7 +34,7 @@ function CreateBarangMasuk() {
 
     const fetchSupplier = async () => {
         try {
-            const response = await axios.get('http://localhost:8081/getsupplier');
+            const response = await axios.get('https://api-sistem-inventaris.vercel.app/getsupplier');
             setSupplierList(response.data.map(supplier => ({
                 label: supplier.nama_supplier,
                 value: supplier.id
@@ -51,7 +51,7 @@ function CreateBarangMasuk() {
 
     const fetchSisaStok = async (barangId) => {
         try {
-            const response = await axios.get(`http://localhost:8081/getbarang/${barangId}`);
+            const response = await axios.get(`https://api-sistem-inventaris.vercel.app/getbarang/${barangId}`);
             setSisaStok(response.data.stok);
         } catch (error) {
             console.error('Error fetching sisa stok:', error);
@@ -66,7 +66,7 @@ function CreateBarangMasuk() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8081/tambahbarangmasuk', values)
+        axios.post('https://api-sistem-inventaris.vercel.app/tambahbarangmasuk', values)
             .then(res => {
                 if (res.data.Status === "Success") {
                     Swal.fire({

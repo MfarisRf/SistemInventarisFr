@@ -19,7 +19,7 @@ function CetakAllBarangKeluar() {
     }, [])
 
     const fetchData = async () => {
-        await axios.get('http://localhost:8081/cetakallbarangkeluar')
+        await axios.get('https://api-sistem-inventaris.vercel.app/cetakallbarangkeluar')
         .then(res => {
             setData(res.data)
             handlePrint()

@@ -24,7 +24,7 @@ function ListBarangMasuk() {
     },[])
 
     const fetchData = async () => {
-        await axios.get('http://localhost:8081/barangmasuk')
+        await axios.get('https://api-sistem-inventaris.vercel.app/barangmasuk')
 		.then(res => setData(res.data))
 		.catch(err => console.log(err));
     }
@@ -45,7 +45,7 @@ function ListBarangMasuk() {
             return;
           }
 
-          axios.delete('http://localhost:8081/deletebarangmasuk/'+id)
+          axios.delete('https://api-sistem-inventaris.vercel.app/deletebarangmasuk/'+id)
 		  						.then(res => {
 		  							Swal.fire({
 		  								icon:"success",

@@ -18,7 +18,7 @@ function EditUser() {
     })
 
     useEffect(()=> {
-        axios.get('http://localhost:8081/edituser/'+id)
+        axios.get('https://api-sistem-inventaris.vercel.app/edituser/'+id)
         .then(res => {
             console.log(res)
             setValues({
@@ -33,7 +33,7 @@ function EditUser() {
 
     const handleUpdate = (event) => {
         event.preventDefault();
-        axios.put('http://localhost:8081/updateuser/'+id, values)
+        axios.put('https://api-sistem-inventaris.vercel.app/updateuser/'+id, values)
         .then(res => {
             Swal.fire({
 				icon:"success",

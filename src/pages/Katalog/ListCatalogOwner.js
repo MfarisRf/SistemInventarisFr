@@ -31,7 +31,7 @@ function ListCatalogOwner() {
     }, []);
 
     const fetchData = async () => {
-        await axios.get('http://localhost:8081/katalog')
+        await axios.get('https://api-sistem-inventaris.vercel.app/katalog')
             .then(res => {
                 if (Array.isArray(res.data)) {
                     setData(res.data);
@@ -63,7 +63,7 @@ function ListCatalogOwner() {
             return;
         }
 
-        axios.delete('http://localhost:8081/deletekatalog/' + id)
+        axios.delete('https://api-sistem-inventaris.vercel.app/deletekatalog/' + id)
             .then(res => {
                 Swal.fire({
                     icon: "success",
@@ -148,10 +148,10 @@ function ListCatalogOwner() {
                                                             <td>{row.nama_produk}</td>
                                                             <td>
                                                                 <img
-                                                                    src={`http://localhost:8081/uploads/${row.image}`}
+                                                                    src={`https://api-sistem-inventaris.vercel.app/uploads/${row.image}`}
                                                                     alt={row.nama_produk}
                                                                     style={{ width: '100px', height: '100px', cursor: 'pointer' }}
-                                                                    onClick={() => openModal(`http://localhost:8081/uploads/${row.image}`, row.width, row.height)} // Tambahkan event onClick
+                                                                    onClick={() => openModal(`https://api-sistem-inventaris.vercel.app/uploads/${row.image}`, row.width, row.height)} // Tambahkan event onClick
                                                                 />
                                                             </td>
                                                             <td>{row.deskripsi}</td>

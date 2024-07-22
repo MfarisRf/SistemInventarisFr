@@ -10,7 +10,7 @@ function DetailBarangMasuk() {
     const [barangmasuk, setBarangMasuk] = useState([])
     
     useEffect(()=> {
-        axios.get('http://localhost:8081/detailbarangmasuk/'+id)
+        axios.get('https://api-sistem-inventaris.vercel.app/detailbarangmasuk/'+id)
         .then(res => {
             console.log(res)
             setBarangMasuk(res.data[0]);

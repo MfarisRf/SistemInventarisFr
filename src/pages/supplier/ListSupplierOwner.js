@@ -23,7 +23,7 @@ function ListSupplierOwner() {
     },[])
 
     const fetchData = async () => {
-        await axios.get('http://localhost:8081/supplier')
+        await axios.get('https://api-sistem-inventaris.vercel.app/supplier')
 		.then(res => setData(res.data))
 		.catch(err => console.log(err));
     }
@@ -45,7 +45,7 @@ function ListSupplierOwner() {
             return;
           }
 
-          axios.delete('http://localhost:8081/deletesupplier/'+id)
+          axios.delete('https://api-sistem-inventaris.vercel.app/deletesupplier/'+id)
 			.then(res => {
 				Swal.fire({
 					icon:"success",

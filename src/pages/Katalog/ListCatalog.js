@@ -32,7 +32,7 @@ function ListCatalog() {
 
     const fetchData = async () => {
         try {
-            const res = await axios.get('http://localhost:8081/katalog');
+            const res = await axios.get('https://api-sistem-inventaris.vercel.app/katalog');
             if (Array.isArray(res.data)) {
                 setData(res.data);
             } else {
@@ -64,7 +64,7 @@ function ListCatalog() {
         }
 
         try {
-            const res = await axios.delete(`http://localhost:8081/deletekatalog/${id}`);
+            const res = await axios.delete(`https://api-sistem-inventaris.vercel.app/deletekatalog/${id}`);
             if (res.status === 200) {
                 Swal.fire({
                     icon: "success",
@@ -159,10 +159,10 @@ function ListCatalog() {
                                                             <td>{row.nama_produk}</td>
                                                             <td>
                                                                 <img
-                                                                    src={`http://localhost:8081/uploads/${row.image}`}
+                                                                    src={`https://api-sistem-inventaris.vercel.app/uploads/${row.image}`}
                                                                     alt={row.nama_produk}
                                                                     style={{ width: '100px', height: '100px', cursor: 'pointer' }}
-                                                                    onClick={() => openModal(`http://localhost:8081/uploads/${row.image}`, row.width, row.height)} // Tambahkan event onClick
+                                                                    onClick={() => openModal(`https://api-sistem-inventaris.vercel.app/uploads/${row.image}`, row.width, row.height)} // Tambahkan event onClick
                                                                 />
                                                             </td>
                                                             <td>{row.deskripsi}</td>

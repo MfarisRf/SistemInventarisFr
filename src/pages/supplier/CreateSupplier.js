@@ -17,7 +17,7 @@ function CreateSupplier() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8081/tambahsupplier', values)
+        axios.post('https://api-sistem-inventaris.vercel.app/tambahsupplier', values)
         .then(res => {
             Swal.fire({
 				icon:"success",

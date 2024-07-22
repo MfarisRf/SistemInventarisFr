@@ -23,7 +23,7 @@ function ListUser() {
     },[])
 
     const fetchData = async () => {
-        await axios.get('http://localhost:8081/user')
+        await axios.get('https://api-sistem-inventaris.vercel.app/user')
 		.then(res => setData(res.data))
 		.catch(err => console.log(err));
     }
@@ -45,7 +45,7 @@ function ListUser() {
             return;
           }
 
-          axios.delete('http://localhost:8081/deleteuser/'+id)
+          axios.delete('https://api-sistem-inventaris.vercel.app/deleteuser/'+id)
 			.then(res => {
 				Swal.fire({
 					icon:"success",

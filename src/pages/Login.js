@@ -15,7 +15,7 @@ function Login() {
   
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8081/login', values)
+        axios.post('https://api-sistem-inventaris.vercel.app/login', values)
         .then(res => {
             if(res.data.Status === "Success") {
                 Swal.fire({

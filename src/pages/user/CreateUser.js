@@ -17,7 +17,7 @@ function CreateUser() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8081/tambahuser', values)
+        axios.post('https://api-sistem-inventaris.vercel.app/tambahuser', values)
         .then(res => {
             Swal.fire({
 				icon:"success",

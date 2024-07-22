@@ -23,7 +23,7 @@ function ListBarang() {
     },[])
 
     const fetchData = async () => {
-        await axios.get('http://localhost:8081/barang')
+        await axios.get('https://api-sistem-inventaris.vercel.app/barang')
 		.then(res => setData(res.data))
 		.catch(err => console.log(err));
     }

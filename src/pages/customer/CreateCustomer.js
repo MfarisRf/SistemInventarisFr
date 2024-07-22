@@ -17,7 +17,7 @@ function CreateCustomer() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8081/tambahcustomer', values)
+        axios.post('https://api-sistem-inventaris.vercel.app/tambahcustomer', values)
         .then(res => {
             Swal.fire({
 				icon:"success",
